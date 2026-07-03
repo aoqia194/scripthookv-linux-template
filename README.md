@@ -14,7 +14,6 @@ All-platform requirements:
 
 Linux-specific requirements:
 
-- MinGW (for cross-compiling Windows DLLs)
 - [msvc-wine](https://github.com/mstorsjo/msvc-wine)
 
 ## Building
