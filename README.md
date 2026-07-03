@@ -27,13 +27,6 @@ cmake --preset release-linux && cmake --build --preset release-linux
 
 Building on Windows should be exactly the same, using the non-Linux CMake presets instead.
 
-## Adding ScriptHookV
-
-To add or update the ScriptHookV SDK, just drop the `inc/*.h` header files in `vendor/ScriptHookV/include/ScriptHookV`.
-Also put the lib file from `lib/ScriptHookV.lib` into `vendor/ScriptHookV/lib`.
-
-The **include** directory has an extra subfolder for clarity in code header includes and to prevent conflicts/confusion.
-
 ## Tips
 
 - I would recommend creating a link to the built **MyProject.asi** file in your GTA directory.
