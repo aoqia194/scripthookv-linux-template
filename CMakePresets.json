@@ -1,0 +1,87 @@
+{
+  "version": 10,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 5
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "base-linux",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{MSVC_WINE}/cmake/toolchain-x64-clang.cmake"
+      }
+    },
+    {
+      "name": "debug-linux",
+      "displayName": "Debug (Linux)",
+      "inherits": "base-linux",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release-linux",
+      "displayName": "Release (Linux)",
+      "inherits": "base-linux",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "debug-linux",
+      "configurePreset": "debug-linux"
+    },
+    {
+      "name": "release-linux",
+      "configurePreset": "release-linux"
+    }
+  ],
+  "packagePresets": [
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "release-linux",
+      "configurePreset": "release-linux"
+    }
+  ]
+}

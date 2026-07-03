@@ -1,0 +1,9 @@
+/*
+
+!/src
+!/vendor
+
+!/.gitignore
+!/CMakeLists.txt
+!/CMakePresets.json
+!/README.md
