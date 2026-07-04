@@ -21,7 +21,7 @@ file(COPY "${ScriptHookV_SOURCE_DIR}/inc/" DESTINATION "${ScriptHookV_HEADER_DES
 file(COPY "${ScriptHookV_SOURCE_DIR}/lib/" DESTINATION "${ScriptHookV_LIB_DEST}")
 
 add_library(vendor_ScriptHookV INTERFACE)
-target_link_libraries(vendor_ScriptHookV INTERFACE "${VENDOR_LIB_DIR}/ScriptHookV.lib")
+target_link_libraries(vendor_ScriptHookV INTERFACE "${ScriptHookV_LIB_DEST}/ScriptHookV.lib")
 
 # Only output errors for ScriptHookV compilation. Otherwise, we get a lot.
 target_compile_options(vendor_ScriptHookV INTERFACE
